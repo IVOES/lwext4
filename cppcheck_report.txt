@@ -1,0 +1,500 @@
+blockdev/windows/file_windows.c:114:39: style: Variable 'err' is assigned a value that is never used. [unreadVariable]
+ if (lopart == -1 && NO_ERROR != (err = GetLastError())) {
+                                      ^
+blockdev/windows/file_windows.c:121:7: style: Variable 'err' is assigned a value that is never used. [unreadVariable]
+  err = GetLastError();
+      ^
+blockdev/windows/file_windows.c:138:39: style: Variable 'err' is assigned a value that is never used. [unreadVariable]
+ if (lopart == -1 && NO_ERROR != (err = GetLastError())) {
+                                      ^
+blockdev/windows/file_windows.c:145:7: style: Variable 'err' is assigned a value that is never used. [unreadVariable]
+  err = GetLastError();
+      ^
+fs_test/common/test_lwext4.c:212:4: style: Variable 'r' is reassigned a value before the old one has been used. [redundantAssignment]
+ r = ext4_fwrite(&f, "Hello World !\n", strlen("Hello World !\n"), 0);
+   ^
+fs_test/common/test_lwext4.c:211:4: note: r is assigned
+ r = ext4_fopen(&f, "/mp/hello.txt", "wb");
+   ^
+fs_test/common/test_lwext4.c:212:4: note: r is overwritten
+ r = ext4_fwrite(&f, "Hello World !\n", strlen("Hello World !\n"), 0);
+   ^
+fs_test/common/test_lwext4.c:213:4: style: Variable 'r' is reassigned a value before the old one has been used. [redundantAssignment]
+ r = ext4_fclose(&f);
+   ^
+fs_test/common/test_lwext4.c:212:4: note: r is assigned
+ r = ext4_fwrite(&f, "Hello World !\n", strlen("Hello World !\n"), 0);
+   ^
+fs_test/common/test_lwext4.c:213:4: note: r is overwritten
+ r = ext4_fclose(&f);
+   ^
+fs_test/common/test_lwext4.c:217:4: style: Variable 'r' is reassigned a value before the old one has been used. [redundantAssignment]
+ r = ext4_fopen(&f, "/mp/test1", "wb");
+   ^
+fs_test/common/test_lwext4.c:213:4: note: r is assigned
+ r = ext4_fclose(&f);
+   ^
+fs_test/common/test_lwext4.c:217:4: note: r is overwritten
+ r = ext4_fopen(&f, "/mp/test1", "wb");
+   ^
+fs_test/common/test_lwext4.c:252:4: style: Variable 'r' is reassigned a value before the old one has been used. [redundantAssignment]
+ r = ext4_fopen(&f, "/mp/test1", "r+");
+   ^
+fs_test/common/test_lwext4.c:248:4: note: r is assigned
+ r = ext4_fclose(&f);
+   ^
+fs_test/common/test_lwext4.c:252:4: note: r is overwritten
+ r = ext4_fopen(&f, "/mp/test1", "r+");
+   ^
+fs_test/lwext4_client.c:76:21: style: Condition 'winsock_init()<0' is always false [knownConditionTrueFalse]
+ if (winsock_init() < 0) {
+                    ^
+fs_test/lwext4_client.c:146:7: style: Unused variable: recvBuff [unusedVariable]
+ char recvBuff[1024];
+      ^
+fs_test/lwext4_server.c:259:21: style: Condition 'winsock_init()<0' is always false [knownConditionTrueFalse]
+ if (winsock_init() < 0) {
+                    ^
+fs_test/lwext4_server.c:389:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%d %d %s", &dev, &cache_mode, dev_name) != 3) {
+     ^
+fs_test/lwext4_server.c:417:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s %s", dev_name, mount_point) != 2) {
+     ^
+fs_test/lwext4_server.c:447:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s", mount_point) != 1) {
+     ^
+fs_test/lwext4_server.c:473:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s %d", mount_point, &d) != 2) {
+     ^
+fs_test/lwext4_server.c:508:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s %d", mount_point, &en) != 2) {
+     ^
+fs_test/lwext4_server.c:520:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s", path) != 1) {
+     ^
+fs_test/lwext4_server.c:535:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%d %s %s", &fid, path, flags) != 3) {
+     ^
+fs_test/lwext4_server.c:755:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s", path) != 1) {
+     ^
+fs_test/lwext4_server.c:767:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s", path) != 1) {
+     ^
+fs_test/lwext4_server.c:781:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%d %s", &did, path) != 2) {
+     ^
+fs_test/lwext4_server.c:884:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s %s %d", path, prefix, &cnt) != 3) {
+     ^
+fs_test/lwext4_server.c:911:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s %s %d %d", path, prefix, &cnt, &ll) != 4) {
+     ^
+fs_test/lwext4_server.c:954:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s %s %d %d", path, prefix, &cnt, &ll) != 4) {
+     ^
+fs_test/lwext4_server.c:1000:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s %s %d", path, prefix, &cnt) != 3) {
+     ^
+fs_test/lwext4_server.c:1022:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s %s %d", path, prefix, &cnt) != 3) {
+     ^
+fs_test/lwext4_server.c:1044:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s %s %d", path, prefix, &cnt) != 3) {
+     ^
+fs_test/lwext4_server.c:1065:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s", path) != 1) {
+     ^
+fs_test/lwext4_server.c:1080:6: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+ if (sscanf(p, "%s", path) != 1) {
+     ^
+fs_test/lwext4_server.c:341:6: style: The scope of the variable 'n' can be reduced. [variableScope]
+ int n;
+     ^
+fs_test/lwext4_server.c:343:6: style: The scope of the variable 'connfd' can be reduced. [variableScope]
+ int connfd;
+     ^
+fs_test/lwext4_server.c:906:6: style: The scope of the variable 'len' can be reduced. [variableScope]
+ int len, ll;
+     ^
+fs_test/lwext4_server.c:949:6: style: The scope of the variable 'len' can be reduced. [variableScope]
+ int len, ll;
+     ^
+src/ext4.c:1138:11: style: The scope of the variable 'next_inode' can be reduced. [variableScope]
+ uint32_t next_inode;
+          ^
+src/ext4.c:1195:26: style: Local variable 'child_ref' shadows outer argument [shadowArgument]
+   struct ext4_inode_ref child_ref;
+                         ^
+src/ext4.c:1134:26: note: Shadowed declaration
+  struct ext4_inode_ref *child_ref, bool rename)
+                         ^
+src/ext4.c:1195:26: note: Shadow variable
+   struct ext4_inode_ref child_ref;
+                         ^
+src/ext4.c:968:6: style: Variable 'len' is assigned a value that is never used. [unreadVariable]
+ len = ext4_path_check(path, &is_goal);
+     ^
+src/ext4.c:1137:22: style: Variable 'inode_mode' is assigned a value that is never used. [unreadVariable]
+ uint32_t inode_mode = EXT4_INODE_MODE_DIRECTORY;
+                     ^
+src/ext4.c:1160:6: style: Variable 'len' is assigned a value that is never used. [unreadVariable]
+ len = ext4_path_check(path, &is_goal);
+     ^
+src/ext4_balloc.c:489:23: style: Local variable 'bg' shadows outer variable [shadowVariable]
+  struct ext4_bgroup *bg = bg_ref.block_group;
+                      ^
+src/ext4_balloc.c:375:22: note: Shadowed declaration
+ struct ext4_bgroup *bg = bg_ref.block_group;
+                     ^
+src/ext4_balloc.c:489:23: note: Shadow variable
+  struct ext4_bgroup *bg = bg_ref.block_group;
+                      ^
+src/ext4_bcache.c:65:1: error: There is an unknown macro here somewhere. Configuration is required. If RB_GENERATE_INTERNAL is a macro then please configure it. [unknownMacro]
+RB_GENERATE_INTERNAL(ext4_buf_lba, ext4_buf, lba_node,
+^
+src/ext4_bitmap.c:82:8: style: Variable 'sbit' is assigned a value that is never used. [unreadVariable]
+  sbit += 8;
+       ^
+src/ext4_bitmap.c:67:8: style: Variable 'sbit' is assigned a value that is never used. [unreadVariable]
+  sbit += 32;
+       ^
+src/ext4_bitmap.c:74:8: style: Variable 'sbit' is assigned a value that is never used. [unreadVariable]
+  sbit += 16;
+       ^
+src/ext4_blockdev.c:146:6: style: The scope of the variable 'r' can be reduced. [variableScope]
+ int r;
+     ^
+src/ext4_blockdev.c:189:19: style: The scope of the variable 'buf' can be reduced. [variableScope]
+ struct ext4_buf *buf;
+                  ^
+src/ext4_dir.c:137:30: style: The scope of the variable 't' can be reduced. [variableScope]
+ struct ext4_dir_entry_tail *t;
+                             ^
+src/ext4_dir.c:273:11: style: The scope of the variable 'skip' can be reduced. [variableScope]
+ uint16_t skip;
+          ^
+src/ext4_dir.c:106:30: style: The scope of the variable 't' can be reduced. [variableScope]
+ struct ext4_dir_entry_tail *t;
+                             ^
+src/ext4_dir_idx.c:1349:8: warning: Identical condition 'r!=EOK', second condition is always false [identicalConditionAfterEarlyExit]
+ if (r != EOK)
+       ^
+src/ext4_dir_idx.c:1345:8: note: If condition 'r!=EOK' is true, the function will return/exit
+ if (r != EOK)
+       ^
+src/ext4_dir_idx.c:1349:8: note: Testing identical condition 'r!=EOK'
+ if (r != EOK)
+       ^
+src/ext4_dir_idx.c:1335:4: style: Variable 'r' is reassigned a value before the old one has been used. [redundantAssignment]
+ r = ext4_block_set(fs->bdev, &new_block);
+   ^
+src/ext4_dir_idx.c:1328:5: note: r is assigned
+  r = ext4_dir_try_insert_entry(&fs->sb, parent, &new_block,
+    ^
+src/ext4_dir_idx.c:1335:4: note: r is overwritten
+ r = ext4_block_set(fs->bdev, &new_block);
+   ^
+src/ext4_dir_idx.c:1335:4: style: Variable 'r' is reassigned a value before the old one has been used. [redundantAssignment]
+ r = ext4_block_set(fs->bdev, &new_block);
+   ^
+src/ext4_dir_idx.c:1331:5: note: r is assigned
+  r = ext4_dir_try_insert_entry(&fs->sb, parent, &target_block,
+    ^
+src/ext4_dir_idx.c:1335:4: note: r is overwritten
+ r = ext4_block_set(fs->bdev, &new_block);
+   ^
+src/ext4_dir_idx.c:544:29: style: The scope of the variable 'q' can be reduced. [variableScope]
+ struct ext4_dir_idx_entry *q;
+                            ^
+src/ext4_dir_idx.c:550:11: style: The scope of the variable 'entry_space' can be reduced. [variableScope]
+ uint16_t entry_space;
+          ^
+src/ext4_dir_idx.c:552:6: style: The scope of the variable 'r' can be reduced. [variableScope]
+ int r;
+     ^
+src/ext4_dir_idx.c:650:6: style: The scope of the variable 'r' can be reduced. [variableScope]
+ int r;
+     ^
+src/ext4_dir_idx.c:1082:6: style: The scope of the variable 'r' can be reduced. [variableScope]
+ int r;
+     ^
+src/ext4_dir_idx.c:1211:30: style: Local variable 'r' shadows outer variable [shadowVariable]
+   struct ext4_dir_idx_root *r = (void *)dx_blks[0].b.data;
+                             ^
+src/ext4_dir_idx.c:1082:6: note: Shadowed declaration
+ int r;
+     ^
+src/ext4_dir_idx.c:1211:30: note: Shadow variable
+   struct ext4_dir_idx_root *r = (void *)dx_blks[0].b.data;
+                             ^
+src/ext4_dir_idx.c:921:21: style: Variable 'real_size' is assigned a value that is never used. [unreadVariable]
+ uint32_t real_size = 0;
+                    ^
+src/ext4_dir_idx.c:953:14: style: Variable 'real_size' is assigned a value that is never used. [unreadVariable]
+   real_size += rec_len;
+             ^
+src/ext4_dir_idx.c:1157:17: style: Variable 'entry_space' is assigned a value that is never used. [unreadVariable]
+    entry_space -= sizeof(struct ext4_dir_idx_tail);
+                ^
+src/ext4_dir_idx.c:1201:17: style: Variable 'entry_space' is assigned a value that is never used. [unreadVariable]
+    entry_space -= sizeof(struct ext4_dir_idx_tail);
+                ^
+src/ext4_dir_idx.c:216:11: style: The scope of the variable 'orig_cum' can be reduced. [variableScope]
+ uint32_t orig_cum, csum = 0;
+          ^
+src/ext4_dir_idx.c:218:6: style: The scope of the variable 'sz' can be reduced. [variableScope]
+ int sz;
+     ^
+src/ext4_dir_idx.c:248:22: style: The scope of the variable 'dp' can be reduced. [variableScope]
+ struct ext4_dir_en *dp;
+                     ^
+src/ext4_dir_idx.c:286:12: style: The scope of the variable 'limit' can be reduced. [variableScope]
+ int coff, limit, cnt;
+           ^
+src/ext4_dir_idx.c:286:19: style: The scope of the variable 'cnt' can be reduced. [variableScope]
+ int coff, limit, cnt;
+                  ^
+src/ext4_dir_idx.c:317:12: style: The scope of the variable 'limit' can be reduced. [variableScope]
+ int coff, limit, count;
+           ^
+src/ext4_dir_idx.c:317:19: style: The scope of the variable 'count' can be reduced. [variableScope]
+ int coff, limit, count;
+                  ^
+src/ext4_extent.c:1588:10: style: The scope of the variable 'len' can be reduced. [variableScope]
+ int32_t len;
+         ^
+src/ext4_extent.c:1597:7: style: The scope of the variable 'unwritten' can be reduced. [variableScope]
+  int unwritten;
+      ^
+src/ext4_extent.c:860:25: style: Variable 'buf_block' is assigned a value that is never used. [unreadVariable]
+ ext4_fsblk_t buf_block = 0;
+                        ^
+src/ext4_fs.c:952:7: style: Local variable 'rc' shadows outer variable [shadowVariable]
+  int rc = ext4_balloc_free_block(inode_ref, fblock);
+      ^
+src/ext4_fs.c:938:6: note: Shadowed declaration
+ int rc;
+     ^
+src/ext4_fs.c:952:7: note: Shadow variable
+  int rc = ext4_balloc_free_block(inode_ref, fblock);
+      ^
+src/ext4_fs.c:967:7: style: Local variable 'rc' shadows outer variable [shadowVariable]
+  int rc = ext4_trans_block_get(fs->bdev, &block, fblock);
+      ^
+src/ext4_fs.c:938:6: note: Shadowed declaration
+ int rc;
+     ^
+src/ext4_fs.c:967:7: note: Shadow variable
+  int rc = ext4_trans_block_get(fs->bdev, &block, fblock);
+      ^
+src/ext4_fs.c:1055:7: style: Local variable 'rc' shadows outer variable [shadowVariable]
+  int rc = ext4_balloc_free_block(inode_ref, xattr_block);
+      ^
+src/ext4_fs.c:938:6: note: Shadowed declaration
+ int rc;
+     ^
+src/ext4_fs.c:1055:7: note: Shadow variable
+  int rc = ext4_balloc_free_block(inode_ref, xattr_block);
+      ^
+src/ext4_hash.c:162:11: style: The scope of the variable 'sum' can be reduced. [variableScope]
+ uint32_t sum;
+          ^
+src/ext4_hash.c:180:11: style: The scope of the variable 'h0' can be reduced. [variableScope]
+ uint32_t h0, h1 = 0x12A3FE2D, h2 = 0x37ABE8F9;
+          ^
+src/ext4_journal.c:143:1: error: There is an unknown macro here somewhere. Configuration is required. If RB_GENERATE_INTERNAL is a macro then please configure it. [unknownMacro]
+RB_GENERATE_INTERNAL(jbd_revoke, revoke_entry, revoke_node,
+^
+src/ext4_mkfs.c:346:22: style: The scope of the variable 'bg_desc' can be reduced. [variableScope]
+ struct ext4_bgroup *bg_desc;
+                     ^
+src/ext4_mkfs.c:349:11: style: The scope of the variable 'bg_free_blk' can be reduced. [variableScope]
+ uint32_t bg_free_blk = 0;
+          ^
+src/ext4_mkfs.c:349:23: style: Variable 'bg_free_blk' is assigned a value that is never used. [unreadVariable]
+ uint32_t bg_free_blk = 0;
+                      ^
+src/ext4_xattr.c:906:51: error: Pointer addition with NULL pointer. [nullPointerArithmetic]
+       (char *)((struct ext4_xattr_list_entry *)0 + 1) +
+                                                  ^
+src/ext4_xattr.c:966:51: error: Pointer addition with NULL pointer. [nullPointerArithmetic]
+       (char *)((struct ext4_xattr_list_entry *)0 + 1) +
+                                                  ^
+src/ext4.c:2353:0: style: The function 'ext4_atime_get' is never used. [unusedFunction]
+
+^
+src/ext4.c:2269:0: style: The function 'ext4_atime_set' is never used. [unusedFunction]
+
+^
+src/ext4_balloc.c:585:0: style: The function 'ext4_balloc_try_alloc_block' is never used. [unusedFunction]
+
+^
+blockdev/blockdev.c:94:0: style: The function 'ext4_blockdev_get' is never used. [unusedFunction]
+
+^
+src/ext4.c:1425:0: style: The function 'ext4_cache_flush' is never used. [unusedFunction]
+
+^
+src/ext4_crc32.c:175:0: style: The function 'ext4_crc32' is never used. [unusedFunction]
+
+^
+src/ext4.c:2411:0: style: The function 'ext4_ctime_get' is never used. [unusedFunction]
+
+^
+src/ext4.c:2325:0: style: The function 'ext4_ctime_set' is never used. [unusedFunction]
+
+^
+src/ext4.c:139:0: style: The function 'ext4_device_unregister' is never used. [unusedFunction]
+
+^
+src/ext4_dir_idx.c:81:0: style: The function 'ext4_dir_dx_rinfo_get_info_length' is never used. [unusedFunction]
+
+^
+src/ext4.c:3234:0: style: The function 'ext4_dir_entry_rewind' is never used. [unusedFunction]
+
+^
+src/ext4.c:3128:0: style: The function 'ext4_dir_mv' is never used. [unusedFunction]
+
+^
+src/ext4_debug.c:52:0: style: The function 'ext4_dmask_clr' is never used. [unusedFunction]
+
+^
+src/ext4_debug.c:57:0: style: The function 'ext4_dmask_get' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:207:0: style: The function 'ext4_extent_get_block_count' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:2013:0: style: The function 'ext4_extent_get_blocks' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:190:0: style: The function 'ext4_extent_get_first_block' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:229:0: style: The function 'ext4_extent_get_start' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:345:0: style: The function 'ext4_extent_header_get_depth' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:307:0: style: The function 'ext4_extent_header_get_entries_count' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:363:0: style: The function 'ext4_extent_header_get_generation' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:289:0: style: The function 'ext4_extent_header_get_magic' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:326:0: style: The function 'ext4_extent_header_get_max_entries_count' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:250:0: style: The function 'ext4_extent_index_get_first_block' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:269:0: style: The function 'ext4_extent_index_get_leaf' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:259:0: style: The function 'ext4_extent_index_set_first_block' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:278:0: style: The function 'ext4_extent_index_set_leaf' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:1704:0: style: The function 'ext4_extent_remove_space' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:218:0: style: The function 'ext4_extent_set_block_count' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:198:0: style: The function 'ext4_extent_set_first_block' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:239:0: style: The function 'ext4_extent_set_start' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:378:0: style: The function 'ext4_extent_tree_init' is never used. [unusedFunction]
+
+^
+src/ext4.c:1267:0: style: The function 'ext4_flink' is never used. [unusedFunction]
+
+^
+src/ext4.c:1560:0: style: The function 'ext4_fopen2' is never used. [unusedFunction]
+
+^
+src/ext4.c:2508:0: style: The function 'ext4_fsymlink' is never used. [unusedFunction]
+
+^
+src/ext4.c:1648:0: style: The function 'ext4_ftruncate' is never used. [unusedFunction]
+
+^
+src/ext4.c:1400:0: style: The function 'ext4_get_sblock' is never used. [unusedFunction]
+
+^
+src/ext4.c:2710:0: style: The function 'ext4_getxattr' is never used. [unusedFunction]
+
+^
+src/ext4.c:2131:0: style: The function 'ext4_inode_exist' is never used. [unusedFunction]
+
+^
+src/ext4_inode.c:166:0: style: The function 'ext4_inode_get_del_time' is never used. [unusedFunction]
+
+^
+src/ext4_inode.c:333:0: style: The function 'ext4_inode_get_dev' is never used. [unusedFunction]
+
+^
+src/ext4.c:2752:0: style: The function 'ext4_listxattr' is never used. [unusedFunction]
+
+^
+src/ext4_mbr.c:130:0: style: The function 'ext4_mbr_write' is never used. [unusedFunction]
+
+^
+src/ext4.c:2600:0: style: The function 'ext4_mknod' is never used. [unusedFunction]
+
+^
+src/ext4.c:2210:0: style: The function 'ext4_mode_get' is never used. [unusedFunction]
+
+^
+src/ext4.c:2147:0: style: The function 'ext4_mode_set' is never used. [unusedFunction]
+
+^
+src/ext4.c:737:0: style: The function 'ext4_mount_setup_locks' is never used. [unusedFunction]
+
+^
+src/ext4.c:2382:0: style: The function 'ext4_mtime_get' is never used. [unusedFunction]
+
+^
+src/ext4.c:2297:0: style: The function 'ext4_mtime_set' is never used. [unusedFunction]
+
+^
+src/ext4_super.c:243:0: style: The function 'ext4_num_base_meta_clusters' is never used. [unusedFunction]
+
+^
+src/ext4.c:2239:0: style: The function 'ext4_owner_get' is never used. [unusedFunction]
+
+^
+src/ext4.c:2180:0: style: The function 'ext4_owner_set' is never used. [unusedFunction]
+
+^
+src/ext4.c:2095:0: style: The function 'ext4_raw_inode_fill' is never used. [unusedFunction]
+
+^
+src/ext4.c:2546:0: style: The function 'ext4_readlink' is never used. [unusedFunction]
+
+^
+src/ext4.c:2831:0: style: The function 'ext4_removexattr' is never used. [unusedFunction]
+
+^
+src/ext4.c:2657:0: style: The function 'ext4_setxattr' is never used. [unusedFunction]
+
+^
+src/ext4_extent.c:1988:0: style: The function 'print_path' is never used. [unusedFunction]
+
+^
+fs_test/lwext4_generic.c:112:0: style: The function 'tim_get_us' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
